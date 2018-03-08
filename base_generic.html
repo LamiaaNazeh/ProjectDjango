@@ -1,0 +1,63 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>Local Library</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-2">
+
+      <ul class="sidebar-nav">
+        {% if temp %}
+      
+          <li><a href="{% url 'index' %}">{{temp}}</a></li>
+        
+
+
+          <h1>data of Writer</h1>
+           <table class="table table-bordered ">
+           
+            <tr>date of birth : {{ temp.date_of_birth}} </tr><br>
+            <tr>date of death :{{ temp.date_of_death }}</tr><br>
+            <tr>to contact : {{ temp.contact }}</tr><br>
+            <tr>bio : {{ temp.bio }}</tr><br>
+            <tr>picture is :<img style="border: 2px black solid; width:60px; height:60px;" src= "../{{temp.image}}"  alt=""/></tr>
+       
+            {{temp.image}}
+  
+            <img src= "1.jpg"  alt=""/>
+            </table>
+            
+      </ul>
+
+      </div>
+      {% else%}
+      errorr
+      {% endif %}
+      {% for wbook in temp2 %}
+       <li><a href="books/books/{{wbook.id}}">{{wbook}}</a>{{wbook.id}}</li>
+      {% endfor %}
+      <div class="col-sm-10 ">
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
