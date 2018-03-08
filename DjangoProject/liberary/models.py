@@ -1,15 +1,6 @@
 from django.db import models
 
-class Writer(models.Model):
 
-    witer_name = models.CharField(max_length=200)
-    # date_birth= models.DateTimeField(default='')
-    # date_death=models.DateTimeField(default='')
-    # Contact=models.URLField(blank=True)
-    # Bio=models.TextField(blank=True)
-    #
-    def __str__(self):
-        return self.witer_name
 
 
 class Book(models.Model):
