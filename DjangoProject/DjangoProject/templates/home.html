@@ -1,0 +1,14 @@
+<!-- home.html -->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Welcome to Django{% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css '%}"
+{% endblock %}
+{% block content %}
+    <h1> Welcome {{ user.username }} !!! </h1>
+    <button class="logout" type="button" onclick="window.location.href='/logout/' ">Logout</button>
+     <button type="button" onclick="window.location.href='/#/' ">Books</button>
+ <button type="button" onclick="window.location.href='/#/' ">Authers</button>
+{% endblock %}
