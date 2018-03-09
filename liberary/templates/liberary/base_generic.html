@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <center><h2 style="background-Color:pink">{{ temp.first_name }} {{ temp.last_name}} Details</h2></center>
+  <br><br>
+  <table class="table">
+    <thead>
+
+        <tr style="background-Color:lightblue; border:1px solid black">
+            <th style="border:1px solid black">writer name </th>
+            <th style="border:1px solid black">date of birth</th>
+           <th style="border:1px solid black">date of death</th>
+           <th style="border:1px solid black">to contact </th>
+           <th style="border:1px solid black">bio</th>
+           <th style="border:1px solid black">Link</th>
+         <th style="border:1px solid black">Books</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+        
+                <td style="background-Color:pink; border:1px solid black">{{ temp.first_name }} {{ temp.last_name}}</td>
+                <td style="background-Color:pink;border:1px solid black">  {{ temp.date_of_birth}}  </td>
+                 <td style="background-Color:pink;border:1px solid black">{{ temp.date_of_death }}</td>
+                <td style="background-Color:pink;border:1px solid black">{{ temp.date_publish.year}} </td>
+                <td style="background-Color:pink;border:1px solid black"> {{ temp.bio }}</td>
+                <td style="background-Color:pink;border:1px solid black"><a>{{ temp.contact }}</a></td>
+                <td style="background-Color:pink;border:1px solid black; padding-left:20px;">{% for wbook in temp2 %}
+                  <li></li><a href="books/books/{{wbook.id}}">{{wbook}}</a></li><br>
+                   {% endfor %}</td>
+            </tr>  
+        </tbody>
+      </table>
+    </div>
+    
+    </body>
+    </html>
+    
+ 

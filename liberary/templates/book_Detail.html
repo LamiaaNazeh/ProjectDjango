@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>book detail</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <center><h2 style="background-Color:pink">{{ temp }} Details</h2></center>
+  <br><br>
+  <table class="table">
+    <thead>
+           
+        <tr style="background-Color:lightblue; border:1px solid black">
+            <th style="border:1px solid black">BooK Name </th>
+            <th style="border:1px solid black">Summary</th>
+           <th style="border:1px solid black">Writer</th>
+           <th style="border:1px solid black">Publish Date </th>
+           <th style="border:1px solid black">Country</th>
+           <th style="border:1px solid black">Link</th>
+         
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td style="background-Color:pink; border:1px solid black">{{ temp }}</td>
+                <td style="background-Color:pink;border:1px solid black">   {{ temp.sammary }}   </td>
+                <td  style="background-Color:pink;border:1px solid black"><a href="/{{temp.Writer_id}}"> {{ temp.Writer}} </a> </td>
+                <td style="background-Color:pink;border:1px solid black">{{ temp.date_publish.year}}  </td>
+                <td style="background-Color:pink;border:1px solid black">{{ temp.country }}</td>
+                <td style="background-Color:pink;border:1px solid black"><a href="{{ temp.link }}">{{ temp.link }}</a></td>
+                
+            </tr>  
+        </tbody>
+      </table>
+    </div>
+    
+    </body>
+    </html>
+    
+ 

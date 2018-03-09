@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <center><h2>List Of Writers </h2><br></center>
+  {% block content %}
+  <div class="list-group" style="text-align:center">
+        {% if num_authors%}
+        {% for author in num_authors %}
+    <a href="liberary/{{author.id}}" class="list-group-item active">{{ author.first_name }} {{ author.last_name }}</a><br>
+    {% endfor %}
+  </div>
+  
+</div>
+{% else %}
+ <p>There are no witers in the library.</p>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>

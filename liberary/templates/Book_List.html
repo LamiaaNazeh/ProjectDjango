@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+<h1>Book List</h1>
+ <table class="table table-bordered ">
+     {% block content %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css '%}">
+     <tr>
+            <td>BooK Name</td>
+     </tr>
+      {% if temp %}
+       {% for book in temp %}
+         <tr>
+             <td> <a href="books/{{book.id}}">{{ book.title }}</a> ({{book.Writer}})</td>
+         </tr>
+       {% endfor %}
+
+ </table>
+      {% else %}
+      <p>There are no books in the library.</p>
+      {% endif %}
+   {% endblock %}
+</body>
+</html>
